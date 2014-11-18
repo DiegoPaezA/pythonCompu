@@ -59,7 +59,6 @@ class MyApp(QtGui.QWidget):
          
           # generic thread using signal
           self.threadPool.append( GenericThread(self.addBatch2,"from generic thread using signal ",delay=0.1) )
-          #self.threadPool.append( GenericThread(self.hi("diego")))
           self.disconnect( self, QtCore.SIGNAL("add(QString)"), self.add )
           self.connect( self, QtCore.SIGNAL("add(QString)"), self.add )
           self.threadPool[len(self.threadPool)-1].start()

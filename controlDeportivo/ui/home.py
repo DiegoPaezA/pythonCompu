@@ -11,11 +11,8 @@ import sys, time
 
 from Ui_home import Ui_MainWindow
 
-
 def suma (a, b):
     print a + b
-
-
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     """
@@ -30,10 +27,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.i=0
+        self.setWindowTitle("Interface de Control")
         self.center() # Centra la ventana en la pantalla
+        
+        self.buttongo.clicked.connect(self.enablebuttons)
         self.ButtonStart.clicked.connect(self.start)
         self.ButtonStop.clicked.connect(self.stop)
-    
+        
       # metodo para centrar la ventana en la pantalla
     def center(self):        
         qr = self.frameGeometry()
@@ -45,6 +45,65 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     
         self.i == 0 
         print "ok"
+        shost = self.Readtext.text()
+        print shost
+       
             
     def stop(self):
-        self.i == 1    
+        self.i == 1 
+        self.ButtonStart.setEnabled(False)
+        self.ButtonStop.setEnabled(False)
+        self.ButtonTrigeron.setEnabled(False)
+        self.Readtext.clear()  
+        self.Readtext.setEnabled(True) 
+        
+        msgBox = QtGui.QMessageBox()
+        msgBox.setText('  Insira o Nome + Numero do Teste.  ')
+        msgBox.setInformativeText("       Exemplo: teste2hiago ")
+        msgBox.setWindowTitle ('Warning!')
+        msgBox.addButton(QtGui.QPushButton('Ok'), QtGui.QMessageBox.AcceptRole)
+        ret = msgBox.exec_();
+        
+        
+    def enablebuttons(self):
+        self.i == 1  
+        dataread = self.Readtext.text()
+
+        if dataread == "":
+            print "Ingrese el nombre y numero de la prueba test1"
+            msgBox = QtGui.QMessageBox()
+            msgBox.setText('  Insira o Nome + Numero do Teste.  ')
+            msgBox.setInformativeText("       Exemplo: teste1hiago ")
+            msgBox.setWindowTitle ('Warning!')
+            msgBox.addButton(QtGui.QPushButton('Ok'), QtGui.QMessageBox.AcceptRole)
+            ret = msgBox.exec_();
+           
+        else:
+            print "habilite los botones"
+            self.ButtonStart.setEnabled(True)
+            self.ButtonStop.setEnabled(True)
+            self.ButtonTrigeron.setEnabled(True)
+            self.Readtext.clear()  
+            self.Readtext.setEnabled(False)
+            
+    def showTime(self):
+    #Show Current Time in "hh:mm:ss" format
+        self.display(QTime.currentTime().toString(QString("hh:mm:ss")))        
+    
+    def readADC(self):
+    #Show Current Time in "hh:mm:ss" format
+        print "Read ADC"
+    
+
+    
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    ui = MainWindow()
+    ui.show()
+
+    sys.exit(app.exec_())
+
+
+
