@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/diegopaez/PycharmProjects/controlDeportivo/ui/home.ui'
 #
-# Created: Tue Nov 18 17:41:48 2014
+# Created: Sat Nov 22 17:24:52 2014
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -167,9 +167,15 @@ class Ui_MainWindow(object):
         self.readResultado.setAlignment(QtCore.Qt.AlignCenter)
         self.readResultado.setObjectName(_fromUtf8("readResultado"))
         self.horizontalLayout.addWidget(self.readResultado)
-        self.lcdNumber = QtGui.QLCDNumber(self.centralWidget)
-        self.lcdNumber.setGeometry(QtCore.QRect(190, 180, 101, 23))
-        self.lcdNumber.setObjectName(_fromUtf8("lcdNumber"))
+        self.relojout = QtGui.QLabel(self.centralWidget)
+        self.relojout.setGeometry(QtCore.QRect(190, 210, 111, 21))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Abyssinica SIL"))
+        font.setPointSize(12)
+        self.relojout.setFont(font)
+        self.relojout.setText(_fromUtf8(""))
+        self.relojout.setAlignment(QtCore.Qt.AlignCenter)
+        self.relojout.setObjectName(_fromUtf8("relojout"))
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)

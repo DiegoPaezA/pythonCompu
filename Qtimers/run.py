@@ -25,6 +25,7 @@ class timers(QtGui.QMainWindow):
 		Start the constant timer
 		"""
 		self.ctimer.start(1000)
+        print "diego--"
 		
 	def constantUpdate(self):
 		"""

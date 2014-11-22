@@ -26,7 +26,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         QMainWindow.__init__(self, parent)
         self.setupUi(self)
-        self.i=0
+
         self.setWindowTitle("Interface de Control")
         self.center() # Centra la ventana en la pantalla
         
@@ -34,39 +34,64 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ButtonStart.clicked.connect(self.start)
         self.ButtonStop.clicked.connect(self.stop)
         
+        self.tiempo = QtCore.QTime()
+        
+        # crear timer
+        #Creo mi Timer y lo conecto a una funcion
+        self.ctimer = QtCore.QTimer()
+        QtCore.QObject.connect(self.ctimer, QtCore.SIGNAL("timeout()"), self.readADC)
+        self.ctimer.setInterval(100)
+        
+        # adding by emitting signal in different thread
+        self.threadPool = []
+        self.threadPool.append( WorkThread() )
+        self.connect( self.threadPool[len(self.threadPool)-1], QtCore.SIGNAL("update(QString)"), self.showTime )
+        
       # metodo para centrar la ventana en la pantalla
     def center(self):        
         qr = self.frameGeometry()
         cp = QtGui.QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
         self.move(qr.topLeft())
-        
+    
+     # metodo thread
+  #  def threadLoop(self):
+         
+         
+         
+
     def start(self):
     
-        self.i == 0 
+
         print "ok"
         shost = self.Readtext.text()
         print shost
+        #self.ctimer.start()
+        self.threadPool[len(self.threadPool)-1].start()
        
             
     def stop(self):
-        self.i == 1 
+ 
         self.ButtonStart.setEnabled(False)
         self.ButtonStop.setEnabled(False)
         self.ButtonTrigeron.setEnabled(False)
         self.Readtext.clear()  
         self.Readtext.setEnabled(True) 
         
-        msgBox = QtGui.QMessageBox()
-        msgBox.setText('  Insira o Nome + Numero do Teste.  ')
-        msgBox.setInformativeText("       Exemplo: teste2hiago ")
-        msgBox.setWindowTitle ('Warning!')
-        msgBox.addButton(QtGui.QPushButton('Ok'), QtGui.QMessageBox.AcceptRole)
-        ret = msgBox.exec_();
+        self.threadPool[len(self.threadPool)-1].terminate()
+        
+        #self.ctimer.stop()
+        
+        #msgBox = QtGui.QMessageBox()
+        #msgBox.setText('  Insira o Nome + Numero do Teste.  ')
+        #msgBox.setInformativeText("       Exemplo: teste2hiago ")
+        #msgBox.setWindowTitle ('Warning!')
+        #msgBox.addButton(QtGui.QPushButton('Ok'), QtGui.QMessageBox.AcceptRole)
+        #ret = msgBox.exec_();
         
         
     def enablebuttons(self):
-        self.i == 1  
+        i = 1  
         dataread = self.Readtext.text()
 
         if dataread == "":
@@ -85,17 +110,44 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ButtonTrigeron.setEnabled(True)
             self.Readtext.clear()  
             self.Readtext.setEnabled(False)
-            
+    
+
+
     def showTime(self):
     #Show Current Time in "hh:mm:ss" format
-        self.display(QTime.currentTime().toString(QString("hh:mm:ss")))        
+        #self.display(QTime.currentTime().toString(QString("hh:mm:ss")))
+        a =  self.tiempo.currentTime()
+        b = self.tiempo.currentTime().toString(str("hh:mm:ss"))
+        
+
+        print b
+        self.relojout.setText(b)
+        #print self.tiempo.currentTime()
     
     def readADC(self):
     #Show Current Time in "hh:mm:ss" format
         print "Read ADC"
     
 
-    
+class WorkThread(QtCore.QThread):
+    def __init__(self):
+        QtCore.QThread.__init__(self)
+        global i
+        i=0
+    def __del__(self):
+        self.wait()
+ 
+    def run(self):
+        #for i in range(6):
+        #time.sleep(0.3) # artificial time delay
+        #self.emit( QtCore.SIGNAL('update(QString)'), "from work thread " + str(i) )
+
+        while i==0:
+            self.emit( QtCore.SIGNAL('update(QString)'), "from work thread " + str(i) )  
+            time.sleep(1) # artificial time delay 
+            print "ok--"
+        return
+  
 
 if __name__ == "__main__":
     import sys
