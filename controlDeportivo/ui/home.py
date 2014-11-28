@@ -9,10 +9,13 @@ from PyQt4.QtCore import pyqtSignature
 from PyQt4 import QtCore, QtGui
 import sys, time
 
+
+import numpy as np
+import pyqtgraph as pg
+
 from Ui_home import Ui_MainWindow
 
-def suma (a, b):
-    print a + b
+
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     """
@@ -34,6 +37,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ButtonStart.clicked.connect(self.start)
         self.ButtonStop.clicked.connect(self.stop)
         
+        self.plotButton.clicked.connect(self.plotGraph)
+        
+        # Radioboton 
+        #self.activarVFC.setChecked(True)
+        #self.activarEMG.setChecked(False)
+        
         self.tiempo = QtCore.QTime()
         
         # crear timer
@@ -46,6 +55,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.threadPool = []
         self.threadPool.append( WorkThread() )
         self.connect( self.threadPool[len(self.threadPool)-1], QtCore.SIGNAL("update(QString)"), self.showTime )
+        
+        
+       # self.view = pg.GraphicsView()
+        #self.setCentralWidget(self.view)   
+       
+        #self.p =self.plot 
+        #self.data1= np.zeros(100)
+        #self.curve1 = self.p.plot(self.data1)
+        
         
       # metodo para centrar la ventana en la pantalla
     def center(self):        
@@ -63,12 +81,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def start(self):
     
 
-        print "ok"
         shost = self.Readtext.text()
         print shost
         #self.ctimer.start()
         self.threadPool[len(self.threadPool)-1].start()
-       
+        
+        self.temporizador = 180 # segundos
+        self.tempoProva = 0
+
             
     def stop(self):
  
@@ -78,16 +98,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.Readtext.clear()  
         self.Readtext.setEnabled(True) 
         
-        self.threadPool[len(self.threadPool)-1].terminate()
+        self.threadPool[len(self.threadPool)-1].terminate() # parar thread
         
-        #self.ctimer.stop()
+        #self.ctimer.stop() # parar timer
         
-        #msgBox = QtGui.QMessageBox()
-        #msgBox.setText('  Insira o Nome + Numero do Teste.  ')
-        #msgBox.setInformativeText("       Exemplo: teste2hiago ")
-        #msgBox.setWindowTitle ('Warning!')
-        #msgBox.addButton(QtGui.QPushButton('Ok'), QtGui.QMessageBox.AcceptRole)
-        #ret = msgBox.exec_();
         
         
     def enablebuttons(self):
@@ -115,19 +129,48 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def showTime(self):
     #Show Current Time in "hh:mm:ss" format
-        #self.display(QTime.currentTime().toString(QString("hh:mm:ss")))
-        a =  self.tiempo.currentTime()
         b = self.tiempo.currentTime().toString(str("hh:mm:ss"))
         
-
-        print b
-        self.relojout.setText(b)
+        #temporizador 
+        minutes = int(self.temporizador/60)
+        seconds = int(self.temporizador%60)
+          
+        # print('%02d:%02d' % (minutes, seconds))
+        
+        # tiempo prueba
+        minutesP = int(self.tempoProva/60)
+        secondsP = int(self.tempoProva%60)
+          
+        #print('%02d:%02d' % (minutesP, secondsP))
+        
+        self.temporizador -= 1
+        self.tempoProva += 1
+        
+        if self.temporizador == 0 : 
+            self.temporizador = 180
+            print "Teste Acabo"
+            
+        self.relojout.setText('%02d:%02d' % (minutes, seconds))
+        self.tempoProvaout.setText('%02d:%02d' % (minutesP, secondsP))
         #print self.tiempo.currentTime()
-    
+        
+
+
     def readADC(self):
     #Show Current Time in "hh:mm:ss" format
-        print "Read ADC"
-    
+        self.data1[:-1] = self.data1[1:]  # shift data in the array one sample left
+                            # (see also: np.roll)
+        self.data1[-1] = np.random.normal()
+        self.curve1.setData(self.data1)
+        
+    def plotGraph(self):
+
+        if self.plotEMG.isChecked() : 
+            print "plot emg"
+        elif self.plotVFC.isChecked() :
+            print "plot VFC"
+        
+       
 
 class WorkThread(QtCore.QThread):
     def __init__(self):
@@ -138,14 +181,9 @@ class WorkThread(QtCore.QThread):
         self.wait()
  
     def run(self):
-        #for i in range(6):
-        #time.sleep(0.3) # artificial time delay
-        #self.emit( QtCore.SIGNAL('update(QString)'), "from work thread " + str(i) )
-
         while i==0:
-            self.emit( QtCore.SIGNAL('update(QString)'), "from work thread " + str(i) )  
-            time.sleep(1) # artificial time delay 
-            print "ok--"
+            self.emit( QtCore.SIGNAL('update(QString)'), " ")  
+            time.sleep(1) # artificial time delay
         return
   
 
@@ -154,7 +192,6 @@ if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     ui = MainWindow()
     ui.show()
-
     sys.exit(app.exec_())
 
 
