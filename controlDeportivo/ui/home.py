@@ -21,8 +21,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     """
     Class documentation goes here.
     """
-    
-    
+
     def __init__(self, parent = None):
         """
         Constructor
@@ -57,12 +56,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.connect( self.threadPool[len(self.threadPool)-1], QtCore.SIGNAL("update(QString)"), self.showTime )
         
         
-       # self.view = pg.GraphicsView()
-        #self.setCentralWidget(self.view)   
+
        
-        #self.p =self.plot 
-        #self.data1= np.zeros(100)
-        #self.curve1 = self.p.plot(self.data1)
+        self.p =self.plot 
+        
+        self.curve1 = self.p.plot()
         
         
       # metodo para centrar la ventana en la pantalla
@@ -158,10 +156,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def readADC(self):
     #Show Current Time in "hh:mm:ss" format
-        self.data1[:-1] = self.data1[1:]  # shift data in the array one sample left
-                            # (see also: np.roll)
-        self.data1[-1] = np.random.normal()
-        self.curve1.setData(self.data1)
+        print "ADC Read"
         
     def plotGraph(self):
 
@@ -169,6 +164,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             print "plot emg"
         elif self.plotVFC.isChecked() :
             print "plot VFC"
+    
+    @pyqtSignature("")
+    def on_resetButton_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        # TODO: not implemented yet
+        raise NotImplementedError
         
        
 
