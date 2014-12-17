@@ -46,6 +46,9 @@ def filtrohrv(rr_source):
                 
         print a,rrlen        
         return newrr_source  
+        
+  
+        
 #rr = loadtxt('rr_new_diego.txt')
 #rr = np.loadtxt('/home/ieb-ufsc/Escritorio/Disertacion/RegistroECg/RegistroDiegoplaymario22nov-origem/rrdiegosMario.txt')
 rr = np.loadtxt('/home/ieb-ufsc/Escritorio/Disertacion/RegistroECg/Captura27nov-origem/sesion1/rrtomastest1.txt') 

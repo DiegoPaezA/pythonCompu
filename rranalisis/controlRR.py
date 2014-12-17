@@ -12,10 +12,11 @@ from scipy import signal
 
 
 #rr = np.loadtxt('/home/ieb-ufsc/Escritorio/Disertacion/RegistroECg/Captura27nov-origem/sesion1/rrtomastest1.txt')
-rr = np.loadtxt('/home/ieb-ufsc/Escritorio/Disertacion/RegistroECg/RegistroDiegoplaymario22nov-origem/rrdiegosMario.txt')
+#rr = np.loadtxt('/home/ieb-ufsc/Escritorio/Disertacion/RegistroECg/RegistroDiegoplaymario22nov-origem/rrdiegosMario.txt')
 #rr = np.loadtxt('/home/ieb-ufsc/Escritorio/Disertacion/RegistroECg/beaglehrv-nexus/rrhiago9dez4.txt')
 #pg.plot(rr,pen=(255,0,0), symbolBrush=(255,255,255), symbolPen='w', symbolSize = 4)
 
+rr = np.loadtxt('/home/ieb-ufsc/Escritorio/Disertacion/RegistroECg/diego15testtriger/rrdiego2.txt')
 hrvAnalisis = hrvclass(rr) # inicializa la clase
 
 print "Media HRV:", hrvAnalisis.mediahrv(), "ms"
@@ -28,7 +29,7 @@ print "NN50: ",  hrvAnalisis.NN50()
 print "pNN50: ", hrvAnalisis.pNN50() , "%"
 
 rr_new = hrvAnalisis.filtrohrv(rr)
-#np.savetxt('rr_new_diego.txt', rr_new, fmt = '%i')
+#np.savetxt('rrdiego2.txt', rr_new, fmt = '%i')
 
 #pg.plot(rr_new,pen=(200,200,200), symbolBrush=(255,0,0), symbolPen='w', symbolSize = 4)
 
@@ -83,6 +84,7 @@ text = pg.TextItem(html='<div style="text-align: center"><span style="color: #FF
 p1.addItem(text)
 text.setPos((xfft[lf_lo]+xfft[lf_hi])/2, 6)
 
+'''
 text = pg.TextItem(html='<div style="text-align: center"><span style="color: #FFF;">HF</span><br><span style="color:', anchor=(-0.3,1.3), border='w', fill=(0, 0, 255, 100))
 p1.addItem(text)
 text.setPos((xfft[hf_lo]+xfft[hf_hi])/2, 6)
@@ -96,3 +98,4 @@ win.nextRow()
 p2 = win.addPlot(title="Lomb")
 p2.plot(gram)
 
+'''
