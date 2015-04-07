@@ -8,13 +8,13 @@ Created on Thu Apr  2 17:37:50 2015
 
 from hrvclassA import hrvclass
 import numpy as np
-import pyqtgraph as pg
-
 import matplotlib.pyplot as plt
 
 
 #rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiego14-May-14-23:48:12.txt')
-rr = np.loadtxt('/home/diegopaez/PycharmProjects/rranalisis/Final/rrdiego214-May-14-23:54:04.txt')
+#rr = np.loadtxt('/home/diegopaez/PycharmProjects/rranalisis/Final/rrdiego214-May-14-23:54:04.txt')
+rr = np.loadtxt('C:/Users/diegopaez/PycharmProjects/rranalisis/Final/rrdiego214-May-14-23:54:04.txt')
+
 
 hrvAnalisis = hrvclass(rr) # inicializa la clase
 rr_new = hrvAnalisis.filtrohrv(rr) # filter and resample the signal
