@@ -60,3 +60,5 @@ ax1.fill_between(Fxx,Pxx,0,where=Fxx<=0.15, facecolor=(0.69,0.49,1.0), alpha=1)
 ax1.fill_between(Fxx,Pxx,0,where=Fxx<=0.04, facecolor=(0.49,0.49,1.0), alpha=1)
 ax1.axvline(x=0.039,linewidth=4, color='r')
 ax1.axvline(x=0.1487,linewidth=4, color='r')
+
+
