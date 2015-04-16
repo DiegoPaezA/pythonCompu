@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/ieb-ufsc/PycharmProjects/rrinterface/ui/home.ui'
 #
-# Created: Mon Mar  9 18:15:44 2015
+# Created: Thu Apr 16 15:38:08 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,7 +26,7 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(631, 570)
+        MainWindow.resize(713, 570)
         MainWindow.setAutoFillBackground(False)
         self.centralWidget = QtGui.QWidget(MainWindow)
         self.centralWidget.setObjectName(_fromUtf8("centralWidget"))
