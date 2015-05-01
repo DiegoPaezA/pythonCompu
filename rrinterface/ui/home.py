@@ -33,8 +33,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.center() # Centra la ventana en la pantalla
         
         #self.buttongo.clicked.connect(self.enablebuttons)
-        self.ButtonStart.clicked.connect(self.start)
-        self.ButtonStop.clicked.connect(self.stop)
+        #self.ButtonStart.clicked.connect(self.start)
+        #self.ButtonStop.clicked.connect(self.stop)
         
         self.plotButton.clicked.connect(self.plotGraph)
         
@@ -76,6 +76,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         a = np.random.rand(20)
         self.curve1.setData(a,pen=(200,200,200), symbolBrush=(255,0,0), symbolPen='w', symbolSize = 4)
     
-       
-
-
+    @pyqtSignature("")
+    def on_ButtonStart_clicked(self):
+        """
+        Slot documentation goes here.
+        """
+        print "Hola Mundo"
