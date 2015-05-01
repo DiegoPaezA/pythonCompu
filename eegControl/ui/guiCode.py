@@ -22,6 +22,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         QMainWindow.__init__(self, parent)
         self.setupUi(self)
+        #self.plotButton.clicked.connect(self.plotGraph)
     
     @pyqtSignature("")
     def on_pushButton_clicked(self):
