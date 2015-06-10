@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>459</width>
-    <height>364</height>
+    <width>582</width>
+    <height>440</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -45,7 +45,7 @@
     <bool>true</bool>
    </property>
    <property name="focusPolicy">
-    <enum>Qt::NoFocus</enum>
+    <enum>Qt::TabFocus</enum>
    </property>
    <attribute name="title">
     <string>Home</string>
@@ -53,16 +53,221 @@
    <widget class="QPushButton" name="tab1">
     <property name="geometry">
      <rect>
-      <x>145</x>
-      <y>110</y>
+      <x>470</x>
+      <y>355</y>
       <width>85</width>
       <height>26</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Continuar</string>
     </property>
    </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>45</y>
+      <width>531</width>
+      <height>305</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="7" column="1">
+      <widget class="QTimeEdit" name="timeEdit_3"/>
+     </item>
+     <item row="9" column="1">
+      <widget class="QTimeEdit" name="timeEdit_4"/>
+     </item>
+     <item row="5" column="1">
+      <widget class="QTimeEdit" name="timeEdit_2"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>Abyssinica SIL</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Na noite anterior em que horario você dormiu?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QTimeEdit" name="timeEdit"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>Manhã</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Tarde</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Noite</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QTimeEdit" name="timeEdit_5"/>
+       </item>
+      </layout>
+     </item>
+     <item row="11" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="font">
+        <font>
+         <family>Abyssinica SIL</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A quanto tempo você não realiza &lt;/p&gt;&lt;p&gt;atividades fisicas intensas?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Abyssinica SIL</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Qual o período do dia da coleta?</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="font">
+        <font>
+         <family>Abyssinica SIL</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A quanto tempo você está sem tomar&lt;/p&gt;&lt;p&gt;cafeina ou energeticos?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <family>Abyssinica SIL</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>A quanto tempo você está sem se alimentar?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <family>Abyssinica SIL</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Hoje, você acordo que horas?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="0" colspan="2">
+      <widget class="Line" name="line_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="Line" name="line_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" colspan="2">
+      <widget class="Line" name="line_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0" colspan="2">
+      <widget class="Line" name="line_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0" colspan="2">
+      <widget class="Line" name="line_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="Line" name="line_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>15</y>
+      <width>521</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Abyssinica SIL</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Caracterização</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>tab1</zorder>
+   <zorder>label_7</zorder>
   </widget>
   <widget class="QWidget" name="tab_2">
    <property name="enabled">
@@ -80,14 +285,66 @@
    <widget class="QPushButton" name="tab2">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>110</y>
+      <x>245</x>
+      <y>200</y>
       <width>85</width>
       <height>26</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Pessoa</string>
+    </property>
+   </widget>
+   <widget class="QScrollBar" name="horizontalScrollBar">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>205</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QScrollBar" name="verticalScrollBar">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>30</y>
+      <width>16</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QScrollBar" name="horizontalScrollBar_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>205</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QScrollBar" name="verticalScrollBar_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>230</y>
+      <width>16</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
     </property>
    </widget>
   </widget>

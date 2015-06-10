@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project ProjectoHiago -->
-<!-- Saved: 2015-06-10, 13:39:07 -->
+<!-- Saved: 2015-06-10, 15:37:21 -->
 <!-- Copyright (C) 2015 DiegoPaez,  -->
 <Project version="5.1">
   <Language></Language>
@@ -16,14 +16,12 @@
   <Sources>
     <Source>__init__.py</Source>
     <Source>Guide/__init__.py</Source>
-    <Source>Guide/Ui_home.py</Source>
-    <Source>Guide/home.py</Source>
     <Source>control.py</Source>
-    <Source>Guide/Ui_tela1.py</Source>
+    <Source>Guide/Ui_hometab.py</Source>
+    <Source>Guide/hometab.py</Source>
   </Sources>
   <Forms>
-    <Form>Guide/home.ui</Form>
-    <Form>Guide/tela1.ui</Form>
+    <Form>Guide/hometab.ui</Form>
   </Forms>
   <Translations/>
   <Resources/>
