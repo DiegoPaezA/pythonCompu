@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tasks SYSTEM "Tasks-5.1.dtd">
+<!-- eric6 tasks file for project ProjectoHiago -->
+<!-- Saved: 2015-06-10, 14:34:32 -->
+<Tasks version="5.1">
+  <ProjectScanFilter></ProjectScanFilter>
+  <Task priority="1" completed="False" type="1">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-06-10, 14:03:12</Created>
+    <Resource>
+      <Filename>Guide/home.py</Filename>
+      <Linenumber>37</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-06-10, 14:03:12</Created>
+    <Resource>
+      <Filename>Guide/home.py</Filename>
+      <Linenumber>45</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-06-10, 14:34:29</Created>
+    <Resource>
+      <Filename>Guide/hometab.py</Filename>
+      <Linenumber>31</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-06-10, 14:34:29</Created>
+    <Resource>
+      <Filename>Guide/hometab.py</Filename>
+      <Linenumber>40</Linenumber>
+    </Resource>
+  </Task>
+</Tasks>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-5.1.dtd">
+<!-- eric project file for project ProjectoHiago -->
+<!-- Saved: 2015-06-10, 13:39:07 -->
+<!-- Copyright (C) 2015 DiegoPaez,  -->
+<Project version="5.1">
+  <Language></Language>
+  <Hash>804b5ef838df4bf16d83201aae9587b90f57e039</Hash>
+  <ProgLanguage mixed="0">Python2</ProgLanguage>
+  <ProjectType>Qt4</ProjectType>
+  <Description></Description>
+  <Version>0.1</Version>
+  <Author>DiegoPaez</Author>
+  <Email></Email>
+  <Eol index="-1"/>
+  <Sources>
+    <Source>__init__.py</Source>
+    <Source>Guide/__init__.py</Source>
+    <Source>Guide/Ui_home.py</Source>
+    <Source>Guide/home.py</Source>
+    <Source>control.py</Source>
+    <Source>Guide/Ui_tela1.py</Source>
+  </Sources>
+  <Forms>
+    <Form>Guide/home.ui</Form>
+    <Form>Guide/tela1.ui</Form>
+  </Forms>
+  <Translations/>
+  <Resources/>
+  <Interfaces/>
+  <Others/>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES"/>
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py2" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw2" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.qm" type="TRANSLATIONS"/>
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES"/>
+    <FiletypeAssociation pattern="*.ts" type="TRANSLATIONS"/>
+    <FiletypeAssociation pattern="*.ui" type="FORMS"/>
+  </FiletypeAssociations>
+</Project>

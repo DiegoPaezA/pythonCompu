@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tasks SYSTEM "Tasks-5.1.dtd">
+<!-- eric6 tasks file for project proBase -->
+<!-- Saved: 2015-06-10, 13:01:22 -->
+<Tasks version="5.1">
+  <ProjectScanFilter></ProjectScanFilter>
+  <Task priority="1" completed="False" type="1">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-06-10, 13:01:05</Created>
+    <Resource>
+      <Filename>gui/guide.py</Filename>
+      <Linenumber>31</Linenumber>
+    </Resource>
+  </Task>
+</Tasks>

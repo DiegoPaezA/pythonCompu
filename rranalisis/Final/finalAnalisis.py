@@ -11,10 +11,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-#rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiego14-May-14-23:48:12.txt')
-#rr = np.loadtxt('/home/diegopaez/PycharmProjects/rranalisis/Final/rrdiego214-May-14-23:54:04.txt')
-rr = np.loadtxt('C:/Users/diegopaez/PycharmProjects/rranalisis/Final/rrdiego14mayo1.txt')
+#rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiego14mayo1.txt')
+rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiegovasal29abril.txt')
+rr = np.loadtxt('/home/ieb-ufsc/Escritorio/coleta30abril/vasal/rrmarcusvasalok1.txt')
 
+
+
+#rr = np.loadtxt('/home/diegopaez/PycharmProjects/rranalisis/Final/rrdiego214-May-14-23:54:04.txt')
+#rr = np.loadtxt('C:/Users/diegopaez/PycharmProjects/rranalisis/Final/rrdiego14mayo1.txt')
+#rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiegodeepbreath14-May-14-23:59:05.txt')
+#rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiegodeepbreath215-May-14-00:19:19.txt')
+#rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiegodeepbreath315-May-14-00:35:42.txt')
 
 hrvAnalisis = hrvclass(rr) # inicializa la clase
 rr_new = hrvAnalisis.filtrohrv(rr) # filter and resample the signal
@@ -41,7 +48,7 @@ print "LF/HF:", "%.4f" % lfhf
 fig, (ax,ax1) = plt.subplots(2,1)
 ax.plot(rr_new,color='black', linewidth = 2,marker='o',markersize=6,markerfacecolor=(1, 0, 0, 1))
 ax.set_xlabel("bpm")
-ax.set_ylabel("time [ms]")
+ax.set_ylabel("Time [ms]")
 ax.grid(True)
 ax1.grid(True)
 #--------------------------------------------Freq
