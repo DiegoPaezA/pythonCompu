@@ -11,7 +11,7 @@ import sys, time
 
 
 import numpy as np
-import pyqtgraph as pg
+import os
 
 from Ui_home import Ui_MainWindow
 
@@ -57,7 +57,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         
 
-       
         self.p =self.plot 
         
         self.curve1 = self.p.plot()
@@ -78,35 +77,38 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def start(self):
     
-
-        shost = self.Readtext.text()
-        print shost
-        #self.ctimer.start()
-        self.threadPool[len(self.threadPool)-1].start()
+        print "Funcion Start : " ,  self.dataread
         
-        self.temporizador = 180 # segundos
-        self.tempoProva = 0
+        #self.ctimer.start()
+        #self.threadPool[len(self.threadPool)-1].start()
+        
+        #self.temporizador = 180 # segundos
+        #self.tempoProva = 0
 
             
     def stop(self):
- 
+        
         self.ButtonStart.setEnabled(False)
         self.ButtonStop.setEnabled(False)
         self.ButtonTrigeron.setEnabled(False)
         self.Readtext.clear()  
         self.Readtext.setEnabled(True) 
         
-        self.threadPool[len(self.threadPool)-1].terminate() # parar thread
+        #self.threadPool[len(self.threadPool)-1].terminate() # parar thread
+        self.totalrr = np.random.randint(10, size=10)
         
+        np.savetxt('rr' + str(self.dataread)  + '.txt', self.totalrr, fmt='%i') # salvar archivo rr total
+        os.chdir(self.directorioOriginal) # vuelve al directorio inicial
         #self.ctimer.stop() # parar timer
         
         
         
     def enablebuttons(self):
         i = 1  
-        dataread = self.Readtext.text()
-
-        if dataread == "":
+        self.dataread = self.Readtext.text()
+        self.crearDir() ## crear directorio
+        
+        if self.dataread == "":
             print "Ingrese el nombre y numero de la prueba test1"
             msgBox = QtGui.QMessageBox()
             msgBox.setText('  Insira o Nome + Numero do Teste.  ')
@@ -154,6 +156,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
 
 
+    def crearDir(self):
+        self.directorioOriginal = os.getcwd()
+        carpeta = "controlDeportivoV3/" +  str(self.dataread)
+
+        directorio = os.path.join(os.pardir, carpeta)
+        if not os.path.isdir(directorio):
+            os.mkdir(directorio)
+        os.chdir(directorio)
+
+        
     def readADC(self):
     #Show Current Time in "hh:mm:ss" format
         print "ADC Read"
