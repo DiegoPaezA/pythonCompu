@@ -10,17 +10,6 @@ from hrvclassA import hrvclass
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-#rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiego14mayo1.txt')
-rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiegovasal29abril.txt')
-rr = np.loadtxt('/home/ieb-ufsc/Escritorio/coleta30abril/vasal/rrmarcusvasalok1.txt')
-
-
-
-#rr = np.loadtxt('/home/diegopaez/PycharmProjects/rranalisis/Final/rrdiego214-May-14-23:54:04.txt')
-#rr = np.loadtxt('C:/Users/diegopaez/PycharmProjects/rranalisis/Final/rrdiego14mayo1.txt')
-#rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiegodeepbreath14-May-14-23:59:05.txt')
-#rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiegodeepbreath215-May-14-00:19:19.txt')
 #rr = np.loadtxt('/home/ieb-ufsc/PycharmProjects/rranalisis/Final/rrdiegodeepbreath315-May-14-00:35:42.txt')
 
 hrvAnalisis = hrvclass(rr) # inicializa la clase

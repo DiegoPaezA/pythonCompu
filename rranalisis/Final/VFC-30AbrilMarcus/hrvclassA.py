@@ -156,23 +156,17 @@ class hrvclass:
         aLF = np.trapz(Pxx[iLF],Fxx[iLF])
         aHF = np.trapz(Pxx[iHF],Fxx[iHF])
         aTotal=aVLF+aLF+aHF;
-        
-        #calculate areas relative to the total area (%)
-        pVLF=(aVLF/aTotal)*100;
-        pLF=(aLF/aTotal)*100;
-        pHF=(aHF/aTotal)*100;
-        
-        print aVLF, aLF, aHF
 
         #calculate LF/HF ratio
         lfhf = aLF/aHF
 
-        pVLF=(np.round(pVLF*10)/10); # round
-        pLF=(np.round(pLF*10)/10);
-        pHF=(np.round(pHF*10)/10);
-
+        aVLF=np.round(aVLF*100)/100; # round
+        aLF=np.round(aLF*100)/100;
+        aHF=np.round(aHF*100)/100;
+        aTotal=np.round(aTotal*100)/100;
+        #lfhf = np.round(lfhf)
         
-        return Pxx, Fxx, pVLF, pLF,pHF, lfhf
+        return Pxx, Fxx, aVLF, aLF,aHF, lfhf
         
         
         
