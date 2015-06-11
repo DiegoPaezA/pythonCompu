@@ -117,7 +117,7 @@ class hrvclass:
         
         #Outputs:   
         #           Output units include:
-        #               aHF,aLF,aVLF (ms^2)
+        #               pHF,pLF,pVLF (%)
         #               PSD (ms^2/Hz)
         #               F (Hz)
         #               lfhf ratio                
@@ -151,7 +151,6 @@ class hrvclass:
         iHF = np.logical_and(Fxx>=HF[0] , Fxx<=HF[1])
 
         #calculate raw areas (power under curve), within the freq bands (ms^2)
-
         aVLF = np.trapz(Pxx[iVLF],Fxx[iVLF])
         aLF = np.trapz(Pxx[iLF],Fxx[iLF])
         aHF = np.trapz(Pxx[iHF],Fxx[iHF])
@@ -162,10 +161,12 @@ class hrvclass:
         pLF=(aLF/aTotal)*100;
         pHF=(aHF/aTotal)*100;
         
-        print aVLF, aLF, aHF
-
         #calculate LF/HF ratio
         lfhf = aLF/aHF
+        
+        aVLF=(np.round(aVLF*100)/100); # round
+        aLF=(np.round(aLF*100)/100);
+        aHF=(np.round(aHF*100)/100);
 
         pVLF=(np.round(pVLF*10)/10); # round
         pLF=(np.round(pLF*10)/10);
