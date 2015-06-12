@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>582</width>
-    <height>440</height>
+    <width>592</width>
+    <height>485</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -29,7 +29,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="currentIndex">
-   <number>0</number>
+   <number>2</number>
   </property>
   <property name="elideMode">
    <enum>Qt::ElideNone</enum>
@@ -53,8 +53,8 @@
    <widget class="QPushButton" name="tab1">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>355</y>
+      <x>475</x>
+      <y>400</y>
       <width>85</width>
       <height>26</height>
      </rect>
@@ -69,16 +69,10 @@
       <x>25</x>
       <y>45</y>
       <width>531</width>
-      <height>305</height>
+      <height>342</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="7" column="1">
-      <widget class="QTimeEdit" name="timeEdit_3"/>
-     </item>
-     <item row="9" column="1">
-      <widget class="QTimeEdit" name="timeEdit_4"/>
-     </item>
      <item row="5" column="1">
       <widget class="QTimeEdit" name="timeEdit_2"/>
      </item>
@@ -120,7 +114,23 @@
      <item row="11" column="1">
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QTimeEdit" name="timeEdit_5"/>
+        <widget class="QComboBox" name="comboBox_2">
+         <item>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>3</string>
+          </property>
+         </item>
+        </widget>
        </item>
       </layout>
      </item>
@@ -206,15 +216,15 @@
        </property>
       </widget>
      </item>
-     <item row="6" column="0" colspan="2">
-      <widget class="Line" name="line_3">
+     <item row="8" column="0" colspan="2">
+      <widget class="Line" name="line_4">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
-     <item row="8" column="0" colspan="2">
-      <widget class="Line" name="line_4">
+     <item row="6" column="0" colspan="2">
+      <widget class="Line" name="line_3">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -239,6 +249,44 @@
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QComboBox" name="comboBox_3">
+       <item>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QComboBox" name="comboBox_4">
+       <item>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </item>
       </widget>
      </item>
     </layout>
@@ -282,50 +330,24 @@
    <attribute name="title">
     <string>Tab 2</string>
    </attribute>
-   <widget class="QPushButton" name="tab2">
-    <property name="geometry">
-     <rect>
-      <x>245</x>
-      <y>200</y>
-      <width>85</width>
-      <height>26</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Pessoa</string>
-    </property>
-   </widget>
    <widget class="QScrollBar" name="horizontalScrollBar">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>205</y>
+      <x>340</x>
+      <y>150</y>
       <width>160</width>
       <height>16</height>
      </rect>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QScrollBar" name="verticalScrollBar">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>30</y>
-      <width>16</width>
-      <height>160</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
     </property>
    </widget>
    <widget class="QScrollBar" name="horizontalScrollBar_2">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>205</y>
+      <x>345</x>
+      <y>210</y>
       <width>160</width>
       <height>16</height>
      </rect>
@@ -334,19 +356,50 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QScrollBar" name="verticalScrollBar_2">
+   <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>230</y>
-      <width>16</width>
-      <height>160</height>
+      <x>335</x>
+      <y>185</y>
+      <width>58</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>345</x>
+      <y>130</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>325</y>
+      <width>160</width>
+      <height>18</height>
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Vertical</enum>
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+  </widget>
+  <widget class="QWidget" name="tab_3">
+   <attribute name="title">
+    <string>Tab3</string>
+   </attribute>
   </widget>
  </widget>
  <resources/>
