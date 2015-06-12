@@ -43,7 +43,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #self.activarEMG.setChecked(False)
         
         self.tiempo = QtCore.QTime()
-        
+        time.sleep(5)
         # crear timer
         #Creo mi Timer y lo conecto a una funcion
         self.ctimer = QtCore.QTimer()
@@ -60,7 +60,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.p =self.plot 
         
         self.curve1 = self.p.plot()
-        
         
       # metodo para centrar la ventana en la pantalla
     def center(self):        
@@ -201,13 +200,3 @@ class WorkThread(QtCore.QThread):
             time.sleep(1) # artificial time delay
         return
   
-
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    ui = MainWindow()
-    ui.show()
-    sys.exit(app.exec_())
-
-
-

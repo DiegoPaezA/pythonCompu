@@ -55,7 +55,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.threadPool.append( WorkThread() )
         self.connect( self.threadPool[len(self.threadPool)-1], QtCore.SIGNAL("update(QString)"), self.showTime )
         
-        
+        self.thread = QtCore.QThread()
+        self.worker = Worker()
+        self.worker.moveToThread(self.thread)
+        self.thread.started.connect(self.worker.loop)
 
        
         self.p =self.plot 
@@ -81,8 +84,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         shost = self.Readtext.text()
         print shost
+        self.thread.start() # Worker Thread
         #self.ctimer.start()
-        self.threadPool[len(self.threadPool)-1].start()
+        #self.threadPool[len(self.threadPool)-1].start()
         
         self.temporizador = 180 # segundos
         self.tempoProva = 0
@@ -96,7 +100,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.Readtext.clear()  
         self.Readtext.setEnabled(True) 
         
-        self.threadPool[len(self.threadPool)-1].terminate() # parar thread
+        self.worker.stop()
+        self.thread.quit()
+        self.thread.wait()
+        
+        #self.threadPool[len(self.threadPool)-1].terminate() # parar thread
         
         #self.ctimer.stop() # parar timer
         
@@ -186,8 +194,23 @@ class WorkThread(QtCore.QThread):
     def run(self):
         while i==0:
             self.emit( QtCore.SIGNAL('update(QString)'), " ")  
-            time.sleep(1) # artificial time delay
+            time.sleep(.1) # artificial time delay
         return
+        
+class Worker(QtCore.QObject):
+    def do_stuff_timer(self):
+        print "Read ADC"
+    def stop(self):
+        self._exit = True
+        self.timer.stop()
+
+    def loop(self):
+        print "hola"
+        self.timer = QtCore.QTimer()
+        self.timer.setSingleShot(False)
+        self.timer.timeout.connect(self.do_stuff_timer)
+        self.timer.start(40)
+  
   
 
 if __name__ == "__main__":
