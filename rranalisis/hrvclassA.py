@@ -65,8 +65,10 @@ class hrvclass:
         """
         :param vector tempo para o grafico : 
         """ 
-        step = float(self.tempoTotal)/float(len(self.newrr_source))
-        self.vectorTempo= np.arange(1,self.tempoTotal+1,step) # Vector de tiempo
+        tempoTotal=self.tempoTotal()
+        step = (tempoTotal)/float(len(self.newrr_source))
+        self.vectorTempo= np.arange(1,tempoTotal+1,step) # Vector de tiempo
+
 
         return self.vectorTempo        
 

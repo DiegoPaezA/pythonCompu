@@ -33,14 +33,14 @@ class hrvclass:
         hlimit = mm + 1.5*iqr
         llimit = mm - 1.5*iqr
         
-        newrr_source=[]
+        self.newrr_source=[]
         
         for i in range(0,rrlen):
             
             if rr_source[i] < (hlimit) and rr_source[i] > (llimit):                
-                newrr_source.append(rr_source[i])
+                self.newrr_source.append(rr_source[i])
                 
-        return newrr_source  
+        return self.newrr_source  
     
     def mediahrv(self):
         
@@ -50,6 +50,27 @@ class hrvclass:
         self.media=int((1/float(self.n))*np.sum(self.dados))
         
         return self.media
+        
+    def tempoTotal(self):
+        
+        """
+        :param tempo total do sinal em segundos : 
+        """ 
+        self.tempoTotal=int(np.sum(self.dados)/1000)
+        
+        return self.tempoTotal
+
+    def vectorTempo(self):
+        
+        """
+        :param vector tempo para o grafico : 
+        """ 
+        tempoTotal=self.tempoTotal()
+        step = (tempoTotal)/float(len(self.newrr_source))
+        self.vectorTempo= np.arange(1,tempoTotal+1,step) # Vector de tiempo
+
+
+        return self.vectorTempo        
 
     def Bpm(self):
         
@@ -160,7 +181,7 @@ class hrvclass:
         pVLF=(aVLF/aTotal)*100;
         pLF=(aLF/aTotal)*100;
         pHF=(aHF/aTotal)*100;
-        
+        pTotal=pVLF+pLF+pHF;
         #calculate LF/HF ratio
         lfhf = aLF/aHF
         
@@ -171,9 +192,10 @@ class hrvclass:
         pVLF=(np.round(pVLF*10)/10); # round
         pLF=(np.round(pLF*10)/10);
         pHF=(np.round(pHF*10)/10);
-
         
-        return Pxx, Fxx, pVLF, pLF,pHF, lfhf
+        Pxx = Pxx/np.sqrt(np.sum(Pxx))
+        
+        return Pxx, Fxx, pVLF, pLF,pHF, lfhf, pTotal
         
         
         
