@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Tasks SYSTEM "Tasks-5.1.dtd">
 <!-- eric6 tasks file for project ProjectoHiago -->
-<!-- Saved: 2015-06-12, 16:57:46 -->
+<!-- Saved: 2015-07-03, 22:45:46 -->
 <Tasks version="5.1">
   <ProjectScanFilter></ProjectScanFilter>
   <Task priority="1" completed="False" type="1">
@@ -25,7 +25,7 @@
   <Task priority="1" completed="False" type="1">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2015-06-12, 15:31:42</Created>
+    <Created>2015-07-03, 22:44:51</Created>
     <Resource>
       <Filename>Guide/hometab.py</Filename>
       <Linenumber>31</Linenumber>
@@ -34,7 +34,7 @@
   <Task priority="1" completed="False" type="1">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2015-06-12, 15:31:42</Created>
+    <Created>2015-07-03, 22:44:51</Created>
     <Resource>
       <Filename>Guide/hometab.py</Filename>
       <Linenumber>40</Linenumber>
