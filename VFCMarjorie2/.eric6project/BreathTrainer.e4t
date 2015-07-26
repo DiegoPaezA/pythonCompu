@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tasks SYSTEM "Tasks-5.1.dtd">
+<!-- eric6 tasks file for project BreathTrainer -->
+<!-- Saved: 2015-07-26, 12:12:26 -->
+<Tasks version="5.1">
+  <ProjectScanFilter></ProjectScanFilter>
+  <Task priority="1" completed="False" type="1">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-07-06, 19:23:54</Created>
+    <Resource>
+      <Filename>gui.py</Filename>
+      <Linenumber>99</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-07-06, 19:23:54</Created>
+    <Resource>
+      <Filename>gui.py</Filename>
+      <Linenumber>111</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-07-06, 19:23:54</Created>
+    <Resource>
+      <Filename>gui.py</Filename>
+      <Linenumber>126</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-07-06, 19:23:54</Created>
+    <Resource>
+      <Filename>gui.py</Filename>
+      <Linenumber>170</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2015-07-06, 19:23:54</Created>
+    <Resource>
+      <Filename>gui.py</Filename>
+      <Linenumber>183</Linenumber>
+    </Resource>
+  </Task>
+</Tasks>
