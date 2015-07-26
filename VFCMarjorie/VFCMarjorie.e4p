@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project VFCMarjorie -->
-<!-- Saved: 2015-07-03, 20:32:40 -->
+<!-- Saved: 2015-07-06, 19:16:03 -->
 <!-- Copyright (C) 2015 Diego Paez,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -12,12 +12,18 @@
   <Version>0.1</Version>
   <Author>Diego Paez</Author>
   <Email></Email>
+  <Eol index="-1"/>
   <Sources>
     <Source>__init__.py</Source>
     <Source>guide/__init__.py</Source>
     <Source>control.py</Source>
     <Source>guide/Ui_gui.py</Source>
     <Source>guide/gui.py</Source>
+    <Source>diaphragmatic_breathing-.jpg</Source>
+    <Source>diaphragmatic_breathing.png</Source>
+    <Source>Dumbbell_training_16.png</Source>
+    <Source>Home_Icon_Silhouette_16.png</Source>
+    <Source>Swimming_Trainer_16.png</Source>
   </Sources>
   <Forms>
     <Form>guide/gui.ui</Form>

@@ -205,7 +205,6 @@ class WorkThread(QtCore.QThread):
 class Worker(QtCore.QObject):
     def do_stuff_timer(self):
         print "Read ADC"
-        global self.listatest.apend(1)
     def stop(self):
         self._exit = True
         self.timer.stop()
