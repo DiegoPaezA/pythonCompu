@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Tasks SYSTEM "Tasks-5.1.dtd">
 <!-- eric6 tasks file for project controlDeportivo -->
-<!-- Saved: 2015-06-12, 00:25:26 -->
+<!-- Saved: 2015-06-12, 00:59:48 -->
 <Tasks version="5.1">
   <ProjectScanFilter></ProjectScanFilter>
   <Task priority="1" completed="False" type="1">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2015-06-12, 00:25:23</Created>
+    <Created>2015-06-12, 00:46:14</Created>
     <Resource>
       <Filename>ui/home.py</Filename>
-      <Linenumber>181</Linenumber>
+      <Linenumber>186</Linenumber>
     </Resource>
   </Task>
 </Tasks>

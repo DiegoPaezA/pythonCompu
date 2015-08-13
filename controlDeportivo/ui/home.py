@@ -59,6 +59,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.worker = Worker()
         self.worker.moveToThread(self.thread)
         self.thread.started.connect(self.worker.loop)
+        
+        self.listatest = [] 
 
        
         self.p =self.plot 
@@ -103,6 +105,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.worker.stop()
         self.thread.quit()
         self.thread.wait()
+        
+        print self.listatest
+        self.listatest = []
         
         #self.threadPool[len(self.threadPool)-1].terminate() # parar thread
         
@@ -200,6 +205,7 @@ class WorkThread(QtCore.QThread):
 class Worker(QtCore.QObject):
     def do_stuff_timer(self):
         print "Read ADC"
+        global self.listatest.apend(1)
     def stop(self):
         self._exit = True
         self.timer.stop()
