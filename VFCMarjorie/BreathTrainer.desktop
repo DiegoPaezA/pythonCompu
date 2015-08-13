@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=
+Terminal=false
+Name=BreathTrainer
+Exec=python /home/diegopaez/PycharmProjects/VFCMarjorie/control.py
+Type=Application
+Icon=gnome-panel-launcher
